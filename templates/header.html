@@ -1,0 +1,33 @@
+<section id="header">
+
+    <header>
+	  <div class="header-logo">
+	    <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo">
+	  </div>
+	  <nav class="header-nav">
+	    <ul>
+	      <li><a href="/">Головна</a></li>
+	      <li><a href="/product">Продукція</a></li>
+	      <li><a href="#">Про нас</a></li>
+	      <li><a href="#">Контакти</a></li>
+	    </ul>
+	  </nav>
+		<div class="d7">
+			<form name="search-form" class="search-form">
+			  <input type="text" class="search_input" name="query" placeholder="Пошук...">
+			  <button type="submit" class="search_btn"><img src="{{ url_for('static', filename='img/search.png') }}" alt="#"></button>
+			</form>
+		</div>
+	  <div class="header-buttons">
+	    <a href="/shopping_cart" class="button-cart"><i class="fa fa-shopping-cart"></i></a>
+		{% if 'username' not in session %}
+		  <button class="login-btn" id="login-btn">Увійти</button>
+		  <button class="register-btn" id="register-btn">Зареєструватися</button>
+		{% elif 'username' in session %}
+		  <button class="profile-btn" id="profile-btn"><a href="/profile"><img src="{{ url_for('static', filename='img/profile.png') }}" alt="#"></a></button>
+		  <form action="/logout" method="post"><button class="exit-btn" id="logout-button">Вийти</button></form>
+		{% endif %}
+	  </div>
+	</header>
+
+</section>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	{% include 'templates/header_links.html' %}
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/add_product.css') }}">
+	<title>Додавання продукту</title>
+</head>
+<body>
+
+	{% include 'templates/header.html' %}
+	<h1>Адміністративна панель</h1>
+	<div class="wrapper">
+
+		<div class="container">
+			<form class="add_product"	method="POST" enctype="multipart/form-data" action="/add_products">
+				<h2>Додати товар</h2>
+				<label for="title">Назва товару:</label>
+				<input type="text" id="title" name="title" required><br><br>
+				<div class="number_type">
+					<div class="price">
+						<label for="price">Цена:</label>
+						<input type="number" id="price" name="price" min="0" step="0.01" required>
+					</div>
+					<br>
+					<div class="count">
+						<label for="count">Кількість:</label>
+						<input type="number" id="count" name="count" min="0" required>
+					</div>
+				</div>
+				<br><br>
+				<div class="select_menu">
+
+					<div class="status">
+						<label for="status">Status:</label>
+						<select id="status" name="status">
+							<option value="In stock">In stock</option>
+							<option value="Out of stock">Out of stock</option>
+						</select>
+					</div>
+					<div class="type_product">
+						<label for="type_id">Тип товару:</label>
+						<select id="type_id" name="type_id" required>
+							<option value="" disabled selected>Оберіть бренд товару</option>
+							{% for type in product_types %}
+								<option value="{{ type[0] }}">{{ type[1] }}</option>
+							{% endfor %}
+						</select>
+					</div>
+				</div>
+				<br><br>
+				<label for="image">Зображення:</label>
+				<input type="file" id="image" name="image" required><br><br>
+
+				<input type="submit" value="Додати продукт">
+			</form>
+		</div>
+		<br>
+
+		<div class="second_conteiner">
+			<form method="POST" class="add_type" enctype="multipart/form-data" action="/add_product_type">
+				<h2>Додати бренд товару</h2>
+			  <label for="title_type">Назва бренда:</label>
+			  <input type="text" name="title_type" id="title_type">
+			  <br>
+			  <label for="image_type">Зображення бренда товару:</label>
+			  <input type="file" name="image_type" id="image_type">
+			  <br>
+			  <button type="submit">Додати бренд товару</button>
+			</form>
+		</div>
+
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	{% include 'templates/forms.html' %}
+    {% include 'templates/footer.html' %}
+</body>
+</html>

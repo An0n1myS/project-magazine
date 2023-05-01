@@ -1,0 +1,137 @@
+.product-grid {
+  margin-left: 30px;
+  display: grid;
+  max-width: 70%;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 20px;
+  justify-items: space-around;
+  padding: 20px;
+}
+
+.product-card {
+  display: flex;
+  max-width: 420px;
+  max-height: 600px;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.product-card:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transform: scale(1.05);
+}
+
+.product-card img {
+
+  min-height: 200px;
+  max-width: 200px;
+  max-height: 200px;
+  margin-bottom: 10px;
+}
+
+.product_title {
+  margin: 0;
+  font-size: 18px;
+  text-align: center;
+}
+
+.product-card .price {
+  font-weight: bold;
+}
+
+.product-card .status {
+  margin-top: auto;
+  font-style: italic;
+}
+
+.product-card .in-stock {
+  color: green;
+}
+
+.product-card .out-of-stock {
+  color: red;
+}
+
+.card-btn {
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #000;
+  border-color: ;
+  border-radius: 5px;
+  text-decoration: none;
+  
+}
+
+.card-btn:hover {
+  background-color: #ddd;
+}
+
+.title {
+  text-align: center;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: column; /* расположение элементов в столбик */
+  align-items: center; /* выравнивание элементов по центру */
+  justify-content: center; /* выравнивание панели по центру */
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 60%;
+  right: 0;
+  transform: translateY(-50%); /* выравнивание панели по вертикали */
+  width: 250px;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.navbar h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.navbar ul {
+  margin: 10px 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navbar li {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.navbar label {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.navbar input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.navbar-btn{
+ padding: 10px 20px;
+  background-color: #fff;
+  color: #000;
+  border-color: ;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.in-stock{
+    color: green;
+}
+.out-of-stock{
+    color:red;
+}

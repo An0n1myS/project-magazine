@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/product.css') }}">
+	{% include 'templates/header_links.html' %}
+	<title>Shopogolic</title>
+</head>
+<body>
+
+	{% include 'templates/header.html' %}
+
+
+
+	<div class="content searchable">
+		<h1 class="title">Наша продукція</h1>
+		<div class="product-grid">
+			{% if products %}
+				{% for product in products %}
+					<div class="product-card">
+						<img src="data:image/png;base64,{{ product[5] }}" alt="{{ product[1] }}">
+						<h3 class="product-title">{{ product[1] }}</h3>
+						<p class="price">{{ product[2] }} грн.</p>
+						<p class="status in-stock">{{ product[4] }}</p>
+						<button class="card-btn add-to-cart-btn" data-product-id="{{ product[0] }}">У кошик</button>
+					</div>
+				{% endfor %}
+
+				<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+				<script>
+					$(document).ready(function() {
+						$('.add-to-cart-btn').click(function() {
+							var productId = $(this).data('product-id');
+							$.post('/add_to_cart/' + productId, function() {
+								location.reload();
+							});
+						});
+					});
+				</script>
+
+			{% else %}
+			  <p>Нет продуктов.</p>
+			{% endif %}
+
+		</div>
+
+		{% include 'templates/navbar.html' %}
+
+	</div>
+
+	{% include 'templates/forms.html' %}
+	{% include 'templates/footer.html' %}
+
+</body>
+</html>

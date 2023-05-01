@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+	{% include 'templates/header_links.html' %}
+	<title>Shopogolic</title>
+</head>
+<body>
+	{% include 'templates/header.html' %}
+	<div class="content searchable">
+		<div class="about_as">
+			<h1 class="title">Про нас</h1>
+			<p>Shopogolic - інтернет-магазин одягу, де ви знайдете все, що потрібно для стильного та модного образу. Ми пропонуємо великий вибір якісного одягу для чоловіків та жінок, взуття, аксесуарів та багато іншого. У нашому магазині ви зможете знайти найновіші тренди в світі моди, які поєднують в собі стиль та комфорт. Ми прагнемо забезпечити нашим клієнтам максимальний комфорт та задоволення від покупок. Завітайте на наш сайт, щоб знайти свій ідеальний образ та зробити замовлення в будь-який час.</p>
+		</div>
+		<h1 class="title">Бренди з якими працюємо</h1>
+		<div class="products-container">
+
+			{% for product in products %}
+				<div class="product">
+					<a href="#">
+						<img src="data:image/png;base64, {{ product[2] }}" alt="{{ product[1] }}">
+						<h3>{{ product[1] }}</h3>
+					</a>
+				</div>
+			{% endfor %}
+
+		</div>
+	</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+	{% include 'templates/forms.html' %}
+    {% include 'templates/footer.html' %}
+
+</body>
+</html>

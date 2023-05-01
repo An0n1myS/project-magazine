@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/shopping_cart.css') }}">
+	{% include 'templates/header_links.html' %}
+	<title>Shopogolic</title>
+</head>
+<body>
+	{% include 'templates/header.html' %}
+
+	<div class="content searchable">
+		<div class="cart-container">
+			<h2 class="cart-header">Кошик</h2>
+			<table class="cart-items">
+				<thead>
+					<tr>
+						<th>Товар</th>
+						<th>Ціна</th>
+						<th>Кількість</th>
+						<th>Всього</th>
+						<th>Видалити</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for product in cart_items %}
+					<tr>
+						<td>{{ product[1] }}</td>
+						<td>{{ product[2] }} грн.</td>
+						<td>{{ product[3] }}</td>
+						<td>{{ product[2] * product[3] }} грн.</td>
+						<td>
+							<form action="/shopping_cart/remove" method="POST">
+								<input type="hidden" name="product_id" value="{{ product[0] }}">
+								<button class="delete-element-btn" type="submit">&times;</button>
+							</form>
+						</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+			<div class="cart-total">
+				<p>Всього: <span>{{ total }} грн.</span></p>
+				<form class="form-to-order" action="/add_cart_to_order" method="post">
+					<button class="checkout-btn">Оформити замовлення</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	{% include 'templates/forms.html' %}
+	{% include 'templates/footer.html' %}
+</body>
+</html>

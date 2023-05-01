@@ -1,0 +1,46 @@
+.content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.content h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #464547;
+}
+
+.content p {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #464547;
+}
+
+.content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.content thead {
+  background-color: #eee;
+}
+
+.content th {
+  text-align: left;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.content td {
+  text-align: left;
+  padding: 10px;
+  font-size: 16px;
+  border-bottom: 1px solid #ececec;
+}
+
+.content td:first-child {
+  font-weight: bold;
+}

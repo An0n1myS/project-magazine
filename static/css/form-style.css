@@ -1,0 +1,72 @@
+
+.register-modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 9999;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.login-modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 9999;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+
+.form {
+  background-color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.close-btn {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  cursor: pointer;
+  color: #7c4d4d;
+  font-size: 28px;
+}
+
+.login-form h2, .register-form h2 {
+  margin-bottom: 10px;
+  color: black;
+}
+
+.login-form input, .register-form input {
+  background-color:rgb(232, 240, 254);
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 80%;
+  border-radius: 5px;
+  border: none;
+}
+
+.login-form button, .register-form button {
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+  background-color: #ddd;
+  color: black;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.login-form button:hover, .register-form button:hover {
+  opacity: 0.8;
+}

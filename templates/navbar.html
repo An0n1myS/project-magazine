@@ -1,0 +1,20 @@
+<section id ="navbar">
+
+  <nav class="navbar">
+		<h2>Обрати бренди</h2>
+	  <ul class="navbar-nav">
+		<form method="GET" action="/product">
+		  {% for product_type in product_types %}
+			<li>
+				<label>
+				  <input type="checkbox" name="type_id" value="{{ product_type[0] }}">
+				  {{ product_type[1] }}
+				</label>
+			</li>
+		  {% endfor %}
+		  <button class="navbar-btn" type="submit">Показати товари</button>
+		</form>
+	  </ul>
+	</nav>
+
+</section>
